@@ -24,8 +24,8 @@
 //   });
 
 let container = document.querySelector("#container");
-console.log(container);
-function searchTitle() {
+// console.log(container);
+let searchTitle = () => {
   fetch(
     "https://api.pexels.com/v1/search?query=music",
     {
@@ -48,10 +48,10 @@ function searchTitle() {
         const id = music.photos[i].id;
         console.log(title);
         console.log(id);
-        container.innerHTML += `<div class="card col-lg-3  mx-2 my-1 bg-transparent text-white pt-2">
-                                  <img src="https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg" class="card-img-top " alt="...">
-                                  <div class="card-body">
-                                    <h5 class="card-title">${title}</h5>
+        container.innerHTML += `<div class="card col-6 col-md-4 col-lg-3 flex-grow-1  mx-2 my-1 bg-transparent text-white p-0">
+                                  <img src="https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg" class="card-img-top flex-grow-1" alt="...">
+                                  <div class="card-body h-auto">
+                                    <p class="card-title text-dark">${title}</p>
                                     <p class="card-text"></p>
                                     <p class="card-text font-weight-bold"></p>
                                   </div>
@@ -59,6 +59,8 @@ function searchTitle() {
       }
     })
     .catch((err) => console.error(err));
-}
+};
 
-function nextPage() {}
+let nextPage = () => {
+  console.log("click");
+};
